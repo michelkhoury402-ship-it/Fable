@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Growth Plan for Fable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--red:#b91c1c;--rl:#dc2626;--rf:rgba(185,28,28,.05);--bk:#111;--g9:#2d2d2d;--g7:#555;--g5:#888;--g3:#c4c4c4;--g2:#e2e2e2;--g1:#f0f0f0;--wh:#fafaf8;--cr:#f5f4f0;--sf:'Playfair Display',Georgia,serif;--sn:'Libre Franklin','Helvetica Neue',sans-serif;--mn:'JetBrains Mono',monospace}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sn);background:var(--wh);color:var(--bk);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.ct{max-width:800px;margin:0 auto;padding:0 32px}.cw{max-width:960px;margin:0 auto;padding:0 32px}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94)}.rv.v{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+.top-bar{height:3px;background:var(--red);width:100%;position:fixed;top:0;left:0;z-index:1000}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:100px 0 80px}
+.hero::after{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background:linear-gradient(160deg,transparent 30%,var(--rf) 100%);pointer-events:none}
+.hc{position:relative;z-index:1}
+.hl{font-family:var(--mn);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:22px}
+.hero h1{font-family:var(--sf);font-size:clamp(2.4rem,5.5vw,4.4rem);font-weight:700;line-height:1.06;color:var(--bk);margin-bottom:18px;letter-spacing:-.02em}
+.hero h1 span{color:var(--red)}
+.hsub{font-size:1rem;color:var(--g7);margin-bottom:32px}
+.hbody{font-size:.98rem;color:var(--g7);max-width:480px;line-height:1.8}
+.hbody strong{color:var(--bk);font-weight:600}.hbody p{margin-bottom:14px}
+.si{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);opacity:.2;display:flex;flex-direction:column;align-items:center;gap:4px}
+.si span{font-family:var(--mn);font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:var(--g5)}
+.schev{width:13px;height:13px;border-right:1.5px solid var(--g5);border-bottom:1.5px solid var(--g5);transform:rotate(45deg);animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(4px)}}
+section{padding:92px 0;position:relative}section+section{border-top:1px solid var(--g2)}
+.sl{font-family:var(--mn);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:2px}
+.sn2{font-family:var(--sf);font-size:.8rem;color:var(--red);font-weight:600;display:block;margin-bottom:14px}
+h2{font-family:var(--sf);font-size:clamp(1.65rem,3.2vw,2.3rem);font-weight:700;line-height:1.15;color:var(--bk);margin-bottom:12px;letter-spacing:-.015em}
+h2 span{color:var(--red)}
+h3.sub{font-family:var(--sf);font-size:1.1rem;font-weight:600;color:var(--bk);margin-top:40px;margin-bottom:12px}
+.ssub{font-size:.95rem;color:var(--red);margin-bottom:28px;font-weight:500}
+.bt{font-size:.96rem;color:var(--g7);line-height:1.8;max-width:640px}.bt p{margin-bottom:14px}.bt strong{color:var(--bk);font-weight:600}.bt em.r{color:var(--red);font-style:normal;font-weight:600}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0}
+.sc2{padding:26px 22px;border-radius:8px;position:relative;overflow:hidden}
+.sc2::after{content:'';position:absolute;top:0;right:0;width:50%;height:100%;pointer-events:none}
+.sc2.dk{background:var(--bk);color:#fff}.sc2.dk::after{background:linear-gradient(135deg,transparent,rgba(185,28,28,.12))}
+.sc2.rd{background:var(--red);color:#fff}.sc2.rd::after{background:linear-gradient(135deg,transparent,rgba(0,0,0,.12))}
+.sb2{font-family:var(--sf);font-size:2.1rem;font-weight:700;line-height:1.1;margin-bottom:5px;position:relative;z-index:1}
+.ss2{font-size:.78rem;opacity:.7;line-height:1.45;position:relative;z-index:1}
+.aq{display:grid;grid-template-columns:3px 1fr;gap:16px;margin-top:28px}.aq .ln{background:var(--red);border-radius:2px}.aq .tx{font-family:var(--sf);font-size:1.05rem;font-style:italic;color:var(--g9);line-height:1.6}
+.stl{margin-top:28px}
+.str{display:grid;grid-template-columns:40px 150px 1fr;gap:0 10px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--g2);transition:background .3s}
+.str:hover{background:var(--rf);margin:0 -10px;padding:18px 10px}.str:last-child{border-bottom:none}
+.str .sn3{font-family:var(--mn);font-size:.64rem;color:var(--red)}.str .st{font-family:var(--sn);font-size:.82rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.03em}.str .sd{font-size:.9rem;color:var(--g7);line-height:1.7}
+.pr{display:flex;gap:22px;align-items:center;justify-content:center;flex-wrap:wrap;margin:32px 0 0;opacity:.2}.pr span{font-family:var(--sf);font-size:.8rem;font-weight:700;color:var(--bk);letter-spacing:.04em}
+.wg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.wc{padding:20px;background:var(--cr);border-radius:6px;border:1px solid var(--g2);transition:border-color .3s}.wc:hover{border-color:var(--g5)}.wc:last-child:nth-child(odd){grid-column:1/-1;max-width:49%}
+.wc .wt{font-family:var(--sn);font-size:.78rem;font-weight:700;color:var(--g9);text-transform:uppercase;letter-spacing:.03em;margin-bottom:5px}.wc .wd{font-size:.84rem;color:var(--g7);line-height:1.6}
+.mw{margin:36px auto;max-width:640px;position:relative;padding-left:48px;padding-bottom:36px}
+.mytitle{position:absolute;left:-8px;top:50%;transform:translateY(-50%) rotate(-90deg);font-family:var(--mn);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g5);white-space:nowrap}
+.myt2,.myb2{position:absolute;left:8px;font-family:var(--mn);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--g3)}.myt2{top:0}.myb2{bottom:40px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:var(--g2);border-radius:8px;overflow:hidden}
+.mc{background:var(--wh);padding:20px 16px;min-height:130px}.mc.mhl{background:var(--red);color:#fff}.mc.mhl .mcn{color:#fff}.mc.mhl .mcd{color:rgba(255,255,255,.8)}
+.mcn{font-family:var(--sn);font-weight:700;font-size:.76rem;color:var(--bk);margin-bottom:5px;text-transform:uppercase;letter-spacing:.03em}.mcd{font-size:.78rem;color:var(--g7);line-height:1.5}
+.mxb{display:flex;justify-content:space-between;align-items:center;margin-top:7px}.mxl{font-family:var(--mn);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g5);flex:1;text-align:center}.mxe{font-family:var(--mn);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--g3)}
+.bars{margin:32px 0;max-width:540px}.br{display:grid;grid-template-columns:96px 1fr 50px;gap:9px;align-items:center;padding:5px 0}
+.bl{font-size:.74rem;color:var(--g7);text-align:right;font-weight:500}.btk{height:22px;background:var(--g1);border-radius:4px;overflow:hidden}
+.bf{height:100%;border-radius:4px;width:0;transition:width 1.2s cubic-bezier(.25,.46,.45,.94)}.bf.red{background:var(--red)}.bf.gray{background:var(--g3)}.bf.dark{background:var(--g9)}
+.bv{font-family:var(--mn);font-size:.66rem;color:var(--g5)}
+.dbox{background:var(--bk);color:#fff;padding:32px 28px;border-radius:8px;margin:28px 0}.dbox p{font-size:.94rem;line-height:1.75;color:rgba(255,255,255,.68);margin-bottom:12px}.dbox p:last-child{margin-bottom:0}.dbox strong{color:#fff}
+.sbs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0}
+.sbtn{display:block;padding:36px 24px;border-radius:8px;text-decoration:none;transition:all .3s;position:relative;overflow:hidden;cursor:pointer}
+.sbtn::after{content:'\2192';position:absolute;bottom:16px;right:20px;font-size:1.2rem;opacity:.2;transition:all .3s}.sbtn:hover::after{opacity:.55;right:16px}
+.sbtn.c1{background:var(--red);color:#fff}.sbtn.c1:hover{background:#a01818;box-shadow:0 6px 24px rgba(185,28,28,.16)}
+.sbtn.c2{background:var(--bk);color:#fff}.sbtn.c2:hover{background:#000;box-shadow:0 6px 24px rgba(0,0,0,.16)}
+.sbtn .sbl{font-family:var(--mn);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;opacity:.4;margin-bottom:8px}
+.sbtn .sbt{font-family:var(--sf);font-size:1.25rem;font-weight:700;margin-bottom:8px;line-height:1.2}.sbtn .sbd{font-size:.82rem;opacity:.6;line-height:1.5}
+.fl{margin-top:28px}.fi{display:grid;grid-template-columns:38px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--g2);align-items:start}.fi:last-child{border-bottom:none}
+.fin{width:30px;height:30px;background:var(--red);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mn);font-size:.66rem;font-weight:600;flex-shrink:0}
+.fi h4{font-family:var(--sn);font-size:.84rem;font-weight:700;color:var(--bk);margin-bottom:3px;text-transform:uppercase;letter-spacing:.02em}.fi p{font-size:.88rem;color:var(--g7);line-height:1.7}
+.fwd{margin:32px 0;padding:28px;background:var(--cr);border-radius:10px}
+.fwr{display:flex;flex-wrap:wrap;justify-content:center;gap:0}.fws{display:flex;align-items:center;gap:6px;padding:7px 14px}
+.fws .fwa{color:var(--red);font-size:.85rem;opacity:.35}.fws .fwt{font-size:.8rem;font-weight:600;color:var(--g9)}
+.fwc{text-align:center;margin-top:12px;font-family:var(--mn);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g5)}
+.lg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+.lc{padding:22px;border-radius:8px;border:1px solid var(--g2);background:var(--wh);transition:all .3s}.lc:hover{border-color:var(--red);box-shadow:0 3px 16px rgba(185,28,28,.05)}
+.lc .lci{width:32px;height:32px;border-radius:7px;background:var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:.82rem;color:#fff;font-weight:700;font-family:var(--mn)}
+.lc .lct{font-family:var(--sn);font-size:.82rem;font-weight:700;color:var(--bk);margin-bottom:5px}.lc .lcd{font-size:.84rem;color:var(--g7);line-height:1.6}
+.ebox{margin-top:32px;padding:22px 24px;background:var(--bk);color:#fff;border-radius:8px}.ebox p{font-size:.92rem;line-height:1.7;color:rgba(255,255,255,.68)}.ebox strong{color:#fff}
+.sigr{display:grid;grid-template-columns:3px 1fr;gap:14px;margin:24px 0}.sigr .ln{background:var(--red);border-radius:2px}
+.sigr .ls{display:flex;flex-direction:column;gap:10px}.sigr .it{font-size:.9rem;color:var(--g9);line-height:1.6}.sigr .it strong{color:var(--bk)}
+.prl{margin-top:28px}.pi{display:grid;grid-template-columns:32px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--g2);align-items:start}.pi:last-child{border-bottom:none}
+.pi .pin{font-family:var(--sf);font-size:1.5rem;font-weight:700;color:var(--red);opacity:.25;line-height:1}
+.pi h4{font-family:var(--sn);font-size:.84rem;font-weight:700;color:var(--bk);margin-bottom:3px}.pi p{font-size:.88rem;color:var(--g7);line-height:1.7}
+/* FUNNEL */
+.funnel{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0}
+.fn-card{padding:22px;border-radius:8px;border-left:3px solid var(--red);background:var(--cr)}
+.fn-card .fn-t{font-family:var(--sn);font-size:.8rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
+.fn-card .fn-d{font-size:.86rem;color:var(--g7);line-height:1.65}
+/* CHANNEL STACK */
+.ch-list{margin-top:24px}.ch-item{display:grid;grid-template-columns:90px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--g2);align-items:start}
+.ch-item:last-child{border-bottom:none}
+.ch-name{font-family:var(--mn);font-size:.74rem;font-weight:600;color:var(--red);padding-top:2px}
+.ch-desc{font-size:.88rem;color:var(--g7);line-height:1.65}
+/* METRICS GRID */
+.met-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:28px 0}
+.met-card{background:var(--bk);color:#fff;padding:20px;border-radius:8px;text-align:center}
+.met-card .met-v{font-family:var(--sf);font-size:1.4rem;font-weight:700;margin-bottom:4px}
+.met-card .met-l{font-size:.72rem;opacity:.55;line-height:1.4}
+/* EXPERIMENT BADGE ROW */
+.exp-row{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.exp-badge{padding:6px 14px;border-radius:20px;font-size:.74rem;font-weight:600;background:var(--rf);color:var(--red);border:1px solid rgba(185,28,28,.12)}
+/* VIRAL ITEMS */
+.vir-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+.vir-card{padding:18px;border:1px solid var(--g2);border-radius:8px;transition:all .3s}
+.vir-card:hover{border-color:var(--red)}
+.vir-card .vir-t{font-family:var(--sn);font-size:.8rem;font-weight:700;color:var(--bk);margin-bottom:4px}
+.vir-card .vir-d{font-size:.84rem;color:var(--g7);line-height:1.55}
+
+.closing{text-align:center;padding:96px 0;background:var(--bk);color:#fff}
+.closing h2{color:#fff;margin-bottom:16px}
+.closing .bt{color:rgba(255,255,255,.58);margin:0 auto;text-align:center;max-width:540px}.closing .bt p{margin-bottom:14px}
+.closing .cta{font-family:var(--sf);font-size:1.35rem;color:var(--rl);margin:36px 0 28px;font-style:italic}
+.closing .con{font-family:var(--mn);font-size:.78rem;color:rgba(255,255,255,.28);line-height:2}.closing .con a{color:rgba(255,255,255,.45);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft{padding:16px 0;text-align:center;border-top:3px solid var(--red)}.ft p{font-size:.64rem;color:var(--g3);font-family:var(--mn);letter-spacing:.05em}
+@media(max-width:768px){section{padding:64px 0}.ct,.cw{padding:0 20px}.sg{grid-template-columns:1fr}.str{display:flex;flex-direction:column;gap:3px}.wg{grid-template-columns:1fr}.wc:last-child:nth-child(odd){max-width:100%}.mw{padding-left:0}.mytitle,.myt2,.myb2{display:none}.mc{min-height:auto}.br{grid-template-columns:72px 1fr 42px}.sbs{grid-template-columns:1fr}.lg{grid-template-columns:1fr}.pr{gap:12px}.pr span{font-size:.68rem}.sbtn .sbt{font-size:1.1rem}.fws{padding:5px 8px}.fws .fwt{font-size:.72rem}.funnel{grid-template-columns:1fr}.met-grid{grid-template-columns:1fr}.vir-grid{grid-template-columns:1fr}.ch-item{grid-template-columns:70px 1fr}}
+@media(max-width:480px){.hero h1{font-size:1.95rem}h2{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<div class="top-bar"></div>
+
+<!-- 1. HERO -->
+<section class="hero">
+<div class="ct hc">
+  <div class="hl rv">STRATEGIC PROPOSAL · 2026</div>
+  <h1 class="rv d1">A Growth Plan<br>for <span>Fable</span></h1>
+  <div class="hsub rv d2">Prepared for Edward Saatchi · Applying for VP of Marketing</div>
+  <div class="hbody rv d3">
+    <p>I didn't write a resume. I wrote this instead.</p>
+    <p>I've studied every pivot from Oculus Story Studio to Showrunner. The tech, the repos, the competitors, the press. <strong>This is my case for what comes next.</strong></p>
+  </div>
+</div>
+<div class="si"><span>Scroll</span><div class="schev"></div></div>
+</section>
+
+<!-- 2. SITUATION -->
+<section><div class="cw">
+  <span class="sl rv">Section</span><span class="sn2 rv">01</span>
+  <h2 class="rv">The <span>Situation</span></h2>
+  <div class="bt rv"><p>Fable's technology is years ahead. Its go-to-market is years behind.</p></div>
+  <div class="sg">
+    <div class="sc2 dk rv d1"><div class="sb2">80M+</div><div class="ss2">views on South Park AI demos. Viral demand proven, never captured</div></div>
+    <div class="sc2 rd rv d2"><div class="sb2">5 Brands</div><div class="ss2">Fable Studio · Fable Simulation · The Simulation · Showrunner · Sim Francisco</div></div>
+    <div class="sc2 dk rv d3"><div class="sb2">0</div><div class="ss2">web pages where someone can watch content without joining Discord</div></div>
+    <div class="sc2 dk rv d4"><div class="sb2">15</div><div class="ss2">employees building the most ambitious AI entertainment platform in the market</div></div>
+  </div>
+  <div class="aq rv d3"><div class="ln"></div><div class="tx">World-class engine. No bodywork. The highest-leverage hire right now isn't an engineer. It's a go-to-market leader.</div></div>
+</div></section>
+
+<!-- 3. STRENGTHS -->
+<section><div class="cw">
+  <span class="sl rv">Section</span><span class="sn2 rv">02</span>
+  <h2 class="rv">The Defensible <span>Advantages</span></h2>
+  <div class="stl">
+    <div class="str rv"><div class="sn3">01</div><div class="st">Simulation-First Architecture</div><div class="sd">Every competitor generates stateless clips. No world, no memory, no persistent characters. Fable is the only system producing narrative coherence across scenes and episodes. Can't be bolted on. Has to be built from the ground up.</div></div>
+    <div class="str rv d1"><div class="sn3">02</div><div class="st">Character Consistency</div><div class="sd">Same character, 14 scenes, 22 minutes. No other AI video system solves this. Fable's purpose-trained diffusion models and simulation-maintained definitions do.</div></div>
+    <div class="str rv d2"><div class="sn3">03</div><div class="st">End-to-End Pipeline</div><div class="sd">Prompt to finished episode. Script, animation, voice, camera, edit. Competitors sell components. Fable sells the whole thing.</div></div>
+    <div class="str rv d3"><div class="sn3">04</div><div class="st">Credibility to Size Ratio</div><div class="sd">Two Emmys, a Peabody, Amazon backing, TED, CNBC, Variety, Forbes, NYT. A 15-person company with the press footprint of one 50x its size.</div></div>
+  </div>
+  <div class="pr rv d4"><span>VARIETY</span><span>FORBES</span><span>NYT</span><span>BLOOMBERG</span><span>THE GUARDIAN</span><span>TED</span><span>CNBC</span></div>
+</div></section>
+
+<!-- 4. GAPS -->
+<section><div class="cw">
+  <span class="sl rv">Section</span><span class="sn2 rv">03</span>
+  <h2 class="rv">What's Holding <span>It Back</span></h2>
+  <div class="wg">
+    <div class="wc rv"><div class="wt">Brand Fragmentation</div><div class="wd">Five names. No one knows what to call the company. Confused brands don't grow.</div></div>
+    <div class="wc rv d1"><div class="wt">No Product Surface</div><div class="wd">Everything lives on Discord. Invisible to anyone not already in the community.</div></div>
+    <div class="wc rv d2"><div class="wt">No Enterprise Presence</div><div class="wd">No page, no deck, no case study for studio buyers. Every B2B conversation starts from scratch.</div></div>
+    <div class="wc rv d3"><div class="wt">No Distribution Engine</div><div class="wd">80M views generated zero persistent infrastructure. No audience, no list, no following.</div></div>
+    <div class="wc rv d4"><div class="wt">No Creator Economics</div><div class="wd">Revenue sharing announced. Not built. No reason for creators to stay or recruit.</div></div>
+  </div>
+</div></section>
+
+<!-- 5. COMPETITIVE POSITION -->
+<section><div class="cw">
+  <span class="sl rv">Section</span><span class="sn2 rv">04</span>
+  <h2 class="rv">Competitive <span>Position</span></h2>
+  <div class="bt rv"><p>Fable doesn't compete on visual fidelity. It competes on <strong>narrative intelligence</strong>. That distinction is the entire strategy.</p></div>
+  <div class="mw rv d1">
+    <div class="mytitle">Narrative Coherence &#8594;</div><div class="myt2">High</div><div class="myb2">Low</div>
+    <div class="mgrid">
+      <div class="mc"><div class="mcn">Runway / Pika / Kling</div><div class="mcd">High visual quality. Zero narrative layer. Stateless clips. Tools, not platforms.</div></div>
+      <div class="mc mhl"><div class="mcn">Fable / Showrunner &#9733;</div><div class="mcd">Simulation-driven narrative. Character consistency. Full pipeline. Only player here.</div></div>
+      <div class="mc"><div class="mcn">Generic AI Stack</div><div class="mcd">ChatGPT + Midjourney + ElevenLabs stitched together. High effort, no consistency.</div></div>
+      <div class="mc"><div class="mcn">Character.AI / Inworld</div><div class="mcd">Strong character AI. Text only. No video, no episodes, no screen pipeline.</div></div>
+    </div>
+    <div class="mxb"><div class="mxe">Low output</div><div class="mxl">Visual Production Capability &#8594;</div><div class="mxe">High output</div></div>
+  </div>
+  <div class="bt rv" style="margin-top:36px"><p><strong>The funding gap is real. The positioning gap is the advantage.</strong></p></div>
+  <div class="bars rv d1">
+    <div class="br"><div class="bl">Runway</div><div class="btk"><div class="bf dark" data-w="94%"></div></div><div class="bv">$235M+</div></div>
+    <div class="br"><div class="bl">Character.AI</div><div class="btk"><div class="bf gray" data-w="60%"></div></div><div class="bv">$150M</div></div>
+    <div class="br"><div class="bl">Inworld AI</div><div class="btk"><div class="bf gray" data-w="40%"></div></div><div class="bv">$100M+</div></div>
+    <div class="br"><div class="bl">Pika</div><div class="btk"><div class="bf gray" data-w="32%"></div></div><div class="bv">$80M</div></div>
+    <div class="br"><div class="bl" style="font-weight:700;color:var(--red)">Fable</div><div class="btk"><div class="bf red" data-w="8%"></div></div><div class="bv" style="color:var(--red)">~$15M</div></div>
+  </div>
+  <div class="bt rv" style="margin-top:10px"><p>Outfunded 15-to-1. Can't win a spending war. <em class="r">Must win a positioning war.</em> Owning the quadrant no one else occupies.</p></div>
+</div></section>
+
+<!-- 6. DIAGNOSIS -->
+<section><div class="cw">
+  <span class="sl rv">Section</span><span class="sn2 rv">05</span>
+  <h2 class="rv">The Core <span>Problem</span></h2>
+  <div class="dbox rv d1">
+    <p>The technology is defensible. <strong>The go-to-market is not.</strong></p>
+    <p>Fable has no compounding growth mechanism. Every user, viewer, and studio conversation is acquired through one-off effort. A press hit, a viral moment, a personal intro. When the effort stops, growth stops.</p>
+    <p>The strategic priority: build two self-reinforcing engines. One acquires consumers without paid spend. The other converts consumer traction into enterprise revenue.</p>
+  </div>
+  <div class="sbs rv d2">
+    <a href="#b2c" class="sbtn c1"><div class="sbl">Stream One</div><div class="sbt">B2C: Growth Without Spend</div><div class="sbd">Let creators do the marketing. Build a self-sustaining flywheel.</div></a>
+    <a href="#b2b" class="sbtn c2"><div class="sbl">Stream Two</div><div class="sbt">B2B: Revenue Through Licensing</div><div class="sbd">Turn Hollywood IP into Showrunner's unfair advantage.</div></a>
+  </div>
+</div></section>
+
+<!-- 7. FOUNDATIONS -->
+<section><div class="ct">
+  <span class="sl rv">Section</span><span class="sn2 rv">06</span>
+  <h2 class="rv">Before Either Stream. <span>Five Prerequisites</span></h2>
+  <div class="bt rv"><p>Neither engine functions without foundational infrastructure. These aren't nice-to-haves. They're blockers.</p></div>
+  <div class="fl">
+    <div class="fi rv"><div class="fin">01</div><div><h4>Brand Consolidation</h4><p>One name. One site. One story. "Showrunner by Fable" for the product. "Fable" for the company. Everything else retired. Week one.</p></div></div>
+    <div class="fi rv d1"><div class="fin">02</div><div><h4>Web-Based Product</h4><p>Move viewing and creation out of Discord. Anyone watches without signup. Anyone creates with a free account. Single highest-ROI investment.</p></div></div>
+    <div class="fi rv d2"><div class="fin">03</div><div><h4>Enterprise Page</h4><p>"For Studios". Value prop, tech overview, moderation, business model, inquiry form. The standard a Disney partner would expect.</p></div></div>
+    <div class="fi rv d3"><div class="fin">04</div><div><h4>Studio-Grade Moderation</h4><p>Pre-generation filtering. Post-generation classification. Human review for licensed IP. Documented SLAs. The gatekeeper to every deal.</p></div></div>
+    <div class="fi rv d4"><div class="fin">05</div><div><h4>IP Onboarding Pipeline</h4><p>Repeatable: franchise art, characters, voices, rules into a custom model. 2 to 4 weeks per IP. This is what makes B2B scale.</p></div></div>
+  </div>
+</div></section>
+
+<!-- 8. B2C -->
+<section id="b2c"><div class="cw">
+  <span class="sl rv">Section</span><span class="sn2 rv">07</span>
+  <h2 class="rv">B2C: Growth <span>Without Spend</span></h2>
+  <div class="bt rv">
+    <p>Paid acquisition is closed. Fable doesn't have the budget. It doesn't need to.</p>
+    <p>Roblox paid creators <strong>over $1B in 2025</strong>. Those creators produced every piece of content, brought every user, and marketed the platform every time they posted externally. <em class="r">The creators are the marketing.</em></p>
+    <p>Showrunner's edge: the creation barrier is near zero. No coding. No animating. Type a prompt, get a finished scene. The creator pool isn't developers. It's everyone.</p>
+  </div>
+  <div class="fwd rv d1">
+    <div class="fwr">
+      <div class="fws"><span class="fwt">Creators make content</span><span class="fwa">&#8594;</span></div>
+      <div class="fws"><span class="fwt">Content = shareable video</span><span class="fwa">&#8594;</span></div>
+      <div class="fws"><span class="fwt">Clips on TikTok/IG = free distribution</span><span class="fwa">&#8594;</span></div>
+      <div class="fws"><span class="fwt">Viewers arrive</span><span class="fwa">&#8594;</span></div>
+      <div class="fws"><span class="fwt">Viewers become creators</span><span class="fwa">&#8594;</span></div>
+      <div class="fws"><span class="fwt">Cycle repeats</span><span class="fwa">&#8635;</span></div>
+    </div>
+    <div class="fwc">The self-reinforcing loop. Every clip is an ad for the platform</div>
+  </div>
+  <div class="bt rv"><p><strong>What infrastructure makes this work in practice:</strong></p></div>
+  <div class="lg">
+    <div class="lc rv"><div class="lci">01</div><div class="lct">Discovery Feed</div><div class="lcd">Web-based, algorithmically ranked. Best content surfaces regardless of who made it. TikTok proved algorithmic beats follower-based distribution.</div></div>
+    <div class="lc rv d1"><div class="lci">02</div><div class="lct">Real Creator Economics</div><div class="lcd">Viewership rewards on watch metrics. Remix rewards when others build on your IP. Seed 10 to 20 founders. One creator at $5K/month talking publicly beats any campaign.</div></div>
+    <div class="lc rv d2"><div class="lci">03</div><div class="lct">Shared Show Worlds</div><div class="lcd">Pre-built universes with characters, lore, simulation dynamics. Creators drop in, not build from zero. 20 to 30 worlds in 18 months.</div></div>
+    <div class="lc rv d3"><div class="lci">04</div><div class="lct">Creator Progression</div><div class="lcd">Clear ladder. Free creation, then threshold unlocks premium tools, then own show worlds, then Partner with revenue share. 100 views = a win.</div></div>
+  </div>
+  <div class="ebox rv d2">
+    <p><strong>The endgame:</strong> marketing budget stays near zero. The creator community does acquisition, production, and distribution. The platform's job is to make creators successful. Everything else follows.</p>
+  </div>
+</div></section>
+
+<!-- 9. B2B -->
+<section id="b2b"><div class="ct">
+  <span class="sl rv">Section</span><span class="sn2 rv">08</span>
+  <h2 class="rv">B2B: Revenue Through <span>Licensing</span></h2>
+  <div class="bt rv">
+    <p>The consumer platform proves the model. Studio licensing monetizes it.</p>
+    <p>Studio licenses IP to Showrunner. Fable builds a purpose-trained model. Art style, characters, world rules, voices. Fans create and consume within that world. Studio retains ownership of all generated content. Revenue share flows back. Fable gains the IP that makes the platform magnetic.</p>
+  </div>
+  <div class="bt rv d1" style="margin-top:24px"><p><strong>The demand signal is clear:</strong></p></div>
+  <div class="sigr rv d2">
+    <div class="ln"></div>
+    <div class="ls">
+      <div class="it"><strong>Sora shut down March 2026.</strong> Disney's $1B deal collapsed. Studios need a new AI partner.</div>
+      <div class="it"><strong>Fan fiction is massive and untapped.</strong> Archive of Our Own: millions of users, tens of millions of works. All text. Showrunner gives them video.</div>
+      <div class="it"><strong>Every fan episode shared on TikTok markets both the franchise and the platform.</strong> Studios get engagement. Fable gets distribution. Creators get tools.</div>
+    </div>
+  </div>
+  <h3 class="sub rv">Priorities, Not Phases</h3>
+  <div class="bt rv"><p>The sequence matters more than the timeline.</p></div>
+  <div class="prl">
+    <div class="pi rv"><div class="pin">1</div><div><h4>Prove it with Exit Valley</h4><p>5,000+ active creators, 50,000+ viewers, demonstrable engagement. The live demo for every studio pitch.</p></div></div>
+    <div class="pi rv d1"><div class="pin">2</div><div><h4>Hire an entertainment industry bridge</h4><p>Head of Studio Partnerships. Someone who's worked inside a major studio. Without this, Fable brings a tech pitch to an entertainment audience.</p></div></div>
+    <div class="pi rv d2"><div class="pin">3</div><div><h4>Land one small deal, not one big deal</h4><p>Mid-tier IP or studio innovation lab. Passionate fans, replicable art style, press-worthy. Pilot, clear metrics, option to expand. Months, not years.</p></div></div>
+    <div class="pi rv d3"><div class="pin">4</div><div><h4>Announce loudly</h4><p>First deal's value isn't revenue. It's credibility. Variety exclusive + fan content demo. Creates FOMO. Shortens every subsequent sales cycle.</p></div></div>
+    <div class="pi rv d4"><div class="pin">5</div><div><h4>Build the data product</h4><p>Engagement data becomes audience intelligence. Studios spend millions on focus groups. Showrunner generates it as a byproduct. The second revenue stream hiding inside the first.</p></div></div>
+  </div>
+</div></section>
+
+<!-- 10. GROWTH MACHINE -->
+<section><div class="cw">
+  <span class="sl rv">Section</span><span class="sn2 rv">09</span>
+  <h2 class="rv">Building the <span>Growth Machine</span></h2>
+  <div class="ssub rv">Repeatable systems, not one-off campaigns</div>
+  <div class="bt rv"><p>Strategy is the easy part. Execution is the job. Everything above means nothing without the operational infrastructure to test, learn, and scale.</p></div>
+
+  <h3 class="sub rv">Operating Rhythm</h3>
+  <div class="bt rv"><p>Growth comes from fast cycles, not big bets. The core loop: hypothesize, test, measure, scale what works, kill what doesn't. Weekly. No sacred cows.</p></div>
+  <div class="met-grid rv d1">
+    <div class="met-card"><div class="met-v">Mon</div><div class="met-l">Experiment review. What did we learn last week?</div></div>
+    <div class="met-card"><div class="met-v">Wed</div><div class="met-l">Creative pipeline. What's shipping this week?</div></div>
+    <div class="met-card"><div class="met-v">Fri</div><div class="met-l">Metrics standup. What moved? What next?</div></div>
+  </div>
+  <div class="bt rv"><p><strong>Speed of learning is the competitive advantage, not budget.</strong></p></div>
+
+  <h3 class="sub rv">Full-Funnel Ownership</h3>
+  <div class="bt rv"><p>Most marketing teams optimize the top of the funnel. More impressions, more clicks, more signups. That's how you get 100K waitlist signups and 200 active creators. I'd own the full journey:</p></div>
+  <div class="funnel rv d1">
+    <div class="fn-card"><div class="fn-t">Awareness</div><div class="fn-d">TikTok, YouTube, Meta, Discord. Organic-first with surgical paid amplification on proven creative. Showrunner content IS the ad creative. Native to each platform, not repurposed across all.</div></div>
+    <div class="fn-card"><div class="fn-t">Activation</div><div class="fn-d">The moment between signup and first scene created. Where most platforms lose 80% of users. Time to first scene under 3 minutes. Pre-loaded worlds. Templated prompts. Every friction point measured.</div></div>
+    <div class="fn-card"><div class="fn-t">Retention</div><div class="fn-d">Why do people come back on day 7? Day 30? The answer is almost always social. Notifications, community challenges, weekly events, streaks. Cohort analysis from week one. Retention curves by channel, by world, by frequency.</div></div>
+    <div class="fn-card"><div class="fn-t">Monetization</div><div class="fn-d">Creator subscriptions, credit packs, premium tools. But only after the retention loop is proven. Premature monetization kills growth. The sequence: free value first, habitual usage second, willingness to pay third.</div></div>
+  </div>
+
+  <h3 class="sub rv">Channel Strategy</h3>
+  <div class="bt rv"><p>Not every channel gets equal weight. Stack-ranked by cost efficiency and feedback speed:</p></div>
+  <div class="ch-list rv d1">
+    <div class="ch-item"><div class="ch-name">TikTok</div><div class="ch-desc">Primary organic engine. Showrunner content is natively short-form video. Clip best creator episodes, run organic, boost winners with paid. Test 20+ creatives per week. The algorithm rewards volume and iteration.</div></div>
+    <div class="ch-item"><div class="ch-name">YouTube</div><div class="ch-desc">Long-form proof. Full episodes, creator spotlights, "how I made this" breakdowns. Builds credibility TikTok can't. Best channel for creator recruitment.</div></div>
+    <div class="ch-item"><div class="ch-name">Discord</div><div class="ch-desc">Community, not acquisition. Stop using it as the product. Inner circle for power creators. Feedback, collaboration, ownership. Retention and advocacy, not onboarding.</div></div>
+    <div class="ch-item"><div class="ch-name">Meta / IG</div><div class="ch-desc">Reels for distribution, Stories for community. Mirror TikTok playbook with platform-native tweaks. Likely skews older and more female.</div></div>
+    <div class="ch-item"><div class="ch-name">Emerging</div><div class="ch-desc">Reddit for niche communities (anime, fan fiction, AI). Threads, Bluesky for early adopters. Low investment, high signal.</div></div>
+  </div>
+
+  <h3 class="sub rv">Experimentation Framework</h3>
+  <div class="bt rv"><p>Not ad-hoc A/B tests. A proper pipeline: hypothesis backlog ranked by impact and ease, standard experiment template, shared results log the whole team can search. Learning should be institutional, not tribal.</p></div>
+  <div class="bt rv"><p><strong>What gets tested:</strong></p></div>
+  <div class="exp-row rv d1">
+    <span class="exp-badge">Onboarding flows</span>
+    <span class="exp-badge">Prompt suggestions</span>
+    <span class="exp-badge">Notification timing</span>
+    <span class="exp-badge">Paywall placement</span>
+    <span class="exp-badge">Creative formats</span>
+    <span class="exp-badge">CTA copy</span>
+    <span class="exp-badge">Show world positioning</span>
+    <span class="exp-badge">Referral mechanics</span>
+  </div>
+  <div class="bt rv"><p>Target: 10+ experiments running at any time. Monthly velocity report shared with Product and leadership.</p></div>
+
+  <h3 class="sub rv">Measurement Architecture</h3>
+  <div class="bt rv"><p>Can't optimize what you can't measure. First 30 days I'd stand up:</p></div>
+  <div class="met-grid rv d1">
+    <div class="met-card"><div class="met-v">DAC</div><div class="met-l">Daily active creators. Scenes created. Episodes completed.</div></div>
+    <div class="met-card"><div class="met-v">D7 / D30</div><div class="met-l">Retention by cohort, by channel, by show world.</div></div>
+    <div class="met-card"><div class="met-v">Share %</div><div class="met-l">Share rate, referral rate, activation rate (signup to first scene).</div></div>
+  </div>
+  <div class="ebox rv d1">
+    <p><strong>North star metric:</strong> weekly active creators who have published at least one scene. This ties acquisition to activation to retention to monetization. If this number grows, everything else follows.</p>
+  </div>
+
+  <h3 class="sub rv">Viral Loops</h3>
+  <div class="bt rv"><p>The product has natural virality. Every scene is shareable. Every creator wants an audience. My job is to engineer the mechanics that amplify this:</p></div>
+  <div class="vir-grid rv d1">
+    <div class="vir-card"><div class="vir-t">Share to Unlock</div><div class="vir-d">Create a scene, share it to earn premium credits. Distribution becomes rewarding.</div></div>
+    <div class="vir-card"><div class="vir-t">Collaborative Creation</div><div class="vir-d">Invite a friend to co-direct an episode. Social creation drives organic invites.</div></div>
+    <div class="vir-card"><div class="vir-t">"Make Your Own" Button</div><div class="vir-d">On every piece of content. One click from watching to creating. The viewer-to-creator conversion mechanism.</div></div>
+    <div class="vir-card"><div class="vir-t">Creator Referrals</div><div class="vir-d">Bring a new creator who publishes, both earn credits. Track chains. Invest in super-spreaders.</div></div>
+  </div>
+</div></section>
+
+<!-- 11. CLOSING -->
+<section class="closing">
+<div class="ct">
+  <span class="sl rv" style="color:rgba(255,255,255,.18)">Section</span>
+  <span class="sn2 rv" style="color:var(--rl)">10</span>
+  <h2 class="rv">Why This, Why Now,<br><span style="color:var(--rl)">Why Me</span></h2>
+  <div class="bt rv d1">
+    <p>The technology works. Amazon has invested. Sora is dead. Disney needs a new partner. The creator economy for AI entertainment is forming now. Whoever builds the platform first owns it.</p>
+    <p>The window is closing. Runway is expanding into storytelling. Google is courting studios. Every month without a growth engine is a month the tech lead narrows.</p>
+    <p>The gap between Fable's technology and its go-to-market is the highest-leverage problem in AI entertainment.</p>
+  </div>
+  <div class="cta rv d2">I want to close that gap.</div>
+  <div class="bt rv d3" style="margin-top:0"><p>If any of this resonates. The plan, the priorities, what I got wrong. I'd welcome the conversation.</p></div>
+  <div class="con rv d4">Michel Khoury<br><a href="mailto:michelkhoury402@gmail.com">michelkhoury402@gmail.com</a></div>
+</div>
+</section>
+
+<div class="ft"><p>Prepared independently. All analysis based on publicly available information.</p></div>
+
+<script>
+var o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('v')})},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){o.observe(el)});
+var bo=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var bars=x.target.querySelectorAll('.bf');for(var i=0;i<bars.length;i++){(function(b,idx){setTimeout(function(){b.style.width=b.getAttribute('data-w')},idx*110)})(bars[i],i)}bo.unobserve(x.target)}})},{threshold:.2});
+document.querySelectorAll('.bars').forEach(function(el){bo.observe(el)});
+window.addEventListener('scroll',function(){var s=document.querySelector('.si');if(s)s.style.opacity=Math.max(0,1-window.scrollY/260)*.2});
+</script>
+</body>
+</html>
